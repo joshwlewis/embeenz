@@ -1,0 +1,8 @@
+<h1>Meow Meow Beenz</h1>
+{{#if session.isAuthenticated}}
+
+{{else}}
+  <h3>These will change Everything!</h3>
+  {{link-to "Log In" "login" class="btn btn-primary"}}
+  {{link-to "Sign Up" "signup" class="btn btn-primary"}}
+{{/if}}

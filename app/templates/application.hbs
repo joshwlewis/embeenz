@@ -1,3 +1,32 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<div class="header text-center">
+  <h2 class="highlight">
+    <span class="hidden-sm hidden-xs">{{beenz-kitties beenz=5 multicolor=true}}</span>
+    Meow Meow Beenz
+    <span class="hidden-sm hidden-xs">{{beenz-kitties beenz=5 multicolor=true}}</span>
+  </h2>
+</div>
+<div class="main">
+  <div class="main-left">
+    <div class="scrollable-pane">
+      <div class="scrollable-content">
+        <ul class="user-list list-group">
+          {{#each model as |user|}}
+            <li class="user-list-item rainbow list-group-item">
+              {{user.name}}
+              {{beenz-kitties beenz=user.beenz}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="main-right">
+    <div class="scrollable-pane">
+      <div class="scrollable-content">
+        <div class="container-fluid">
+          {{outlet}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
