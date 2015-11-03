@@ -47,7 +47,8 @@
 @import "../../bower_components/bootstrap/less/responsive-utilities.less";
 
 // App Styles
-@import "kitties";
+@import "flash";
+@import "gravatar";
 @import "rainbow";
 @import "sunburst";
 
@@ -59,6 +60,10 @@ html, body, .application {
 .header {
   border-bottom: 1px solid @gray-lighter;
   height: 64px;
+}
+
+.brand {
+  display: inline-block;
 }
 
 .main {
@@ -99,6 +104,14 @@ html, body, .application {
   margin-bottom: -1px;
   .user-list-item {
     border-radius: 0;
+    .avatar {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .info {
+      margin-left: 50px;
+    }
   }
 }
 
@@ -112,4 +125,5 @@ html, body, .application {
     0.05em -0.05em 0 #000,
     0 0 2em rgba(255,255,255,0.75);
 }
+
 

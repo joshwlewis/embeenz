@@ -1,9 +1,7 @@
-<div class="header text-center">
-  <h2 class="highlight">
-    <span class="hidden-sm hidden-xs">{{beenz-kitties beenz=5 multicolor=true}}</span>
+<div class="header">
+  <h1 class="brand highlight">
     Meow Meow Beenz
-    <span class="hidden-sm hidden-xs">{{beenz-kitties beenz=5 multicolor=true}}</span>
-  </h2>
+  </h1>
 </div>
 <div class="main">
   <div class="main-left">
@@ -12,8 +10,13 @@
         <ul class="user-list list-group">
           {{#each model as |user|}}
             <li class="user-list-item rainbow list-group-item">
-              {{user.name}}
-              {{beenz-kitties beenz=user.beenz}}
+              <div class="avatar">
+                {{beenz-gravatar url=user.gravatar_url}}
+              </div>
+              <div class="info">
+                <div class="name">{{user.name}}</div>
+                <div class="beenz">{{beenz-kitties beenz=user.beenz}}</div>
+              </div>
             </li>
           {{/each}}
         </ul>
@@ -29,4 +32,11 @@
       </div>
     </div>
   </div>
+</div>
+<div class="flash-container">
+  {{#each flashMessages.queue as |flash|}}
+    <div class="flash-message">
+      {{flash-message flash=flash}}
+    </div>
+  {{/each}}
 </div>

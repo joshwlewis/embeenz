@@ -1,7 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  tagName: "span",
   classNames: ["kitties"],
+  size: 16,
 
   kitties: Ember.computed('beenz', function() {
     return [1,2,3,4,5].map((been) => {
