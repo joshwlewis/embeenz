@@ -1,0 +1,15 @@
+{{beenz-kitties beenz=beenz
+                isEditable=isEditing
+                size=60
+                action="giveBeenz"}}
+{{#if isEditing}}
+  <h4>Your giving {{name}} {{beenz}} beenz</h4>
+  <button {{action 'save'}} class="btn btn-primary">Save Beenz</button>
+{{else}}
+  {{#if beenz}}
+    <h4>You gave {{name}} {{beenz}} beenz</h4>
+    <button {{action 'edit'}} class="btn btn-primary">Change Beenz</button>
+  {{else}}
+    <button {{action 'edit'}} class="btn btn-primary">Give {{name}} Beenz!</button>
+  {{/if}}
+{{/if}}

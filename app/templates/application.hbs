@@ -1,15 +1,15 @@
 <div class="header">
-  <h1 class="brand highlight">
-    Meow Meow Beenz
-  </h1>
+  <h2 class="brand highlight">
+    {{link-to 'Meow Meow Beenz' 'application'}}
+  </h2>
 </div>
 <div class="main">
   <div class="main-left">
     <div class="scrollable-pane">
       <div class="scrollable-content">
-        <ul class="user-list list-group">
+        <div class="user-list list-group">
           {{#each model as |user|}}
-            <li class="user-list-item rainbow list-group-item">
+            {{#link-to "user" user.name class="user-list-item rainbow list-group-item"}}
               <div class="avatar">
                 {{beenz-gravatar url=user.gravatar_url}}
               </div>
@@ -17,16 +17,16 @@
                 <div class="name">{{user.name}}</div>
                 <div class="beenz">{{beenz-kitties beenz=user.beenz}}</div>
               </div>
-            </li>
+            {{/link-to}}
           {{/each}}
-        </ul>
+        </div>
       </div>
     </div>
   </div>
   <div class="main-right">
     <div class="scrollable-pane">
       <div class="scrollable-content">
-        <div class="container-fluid">
+        <div class="container-fluid content">
           {{outlet}}
         </div>
       </div>

@@ -56,7 +56,6 @@ html, body, .application {
   height: 100%;
 }
 
-
 .header {
   border-bottom: 1px solid @gray-lighter;
   height: 64px;
@@ -64,6 +63,7 @@ html, body, .application {
 
 .brand {
   display: inline-block;
+  margin-left: 15px;
 }
 
 .main {
@@ -99,11 +99,20 @@ html, body, .application {
   height: 100%;
   width: 74.5%;
 }
+
+.content {
+  .gravatar {
+    margin: 10px;
+  }
+  padding-top: 10px;
+}
+
 .user-list {
   margin-top: -1px;
   margin-bottom: -1px;
   .user-list-item {
     border-radius: 0;
+    color: white;
     .avatar {
       position: absolute;
       top: 50%;
@@ -111,6 +120,16 @@ html, body, .application {
     }
     .info {
       margin-left: 50px;
+    }
+    &.active {
+      border-top: 1px solid @gray-lighter;
+      border-bottom: 1px solid @gray-lighter;
+      border-left: 1px solid @gray-lighter;
+      border-right: none;
+      background: -webkit-linear-gradient(left, rgba(156,21,235,0), rgba(156,21,235,0)); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(right, rgba(156,21,235,1), rgba(156,21,235,0)); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(right, rgba(156,21,235,1), rgba(156,21,235,0)); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to right, rgba(156,21,235,1), rgba(156,21,235,0));
     }
   }
 }
@@ -124,6 +143,9 @@ html, body, .application {
     -0.05em 0.05em 0 #000,
     0.05em -0.05em 0 #000,
     0 0 2em rgba(255,255,255,0.75);
+  a {
+    color: white;
+  }
 }
 
 

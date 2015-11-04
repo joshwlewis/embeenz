@@ -1,0 +1,13 @@
+<div class="text-center">
+  <h2 class="highlight">{{model.user.name}}</h2>
+  {{beenz-gravatar url=model.user.gravatar_url size=80}}
+  {{beenz-kitties beenz=model.user.beenz size=60}}
+  <h4>{{model.user.name}} has {{model.user.beenz}} beenz</h4>
+
+  {{#if session.isAuthenticated}}
+    <br/>
+    {{give-beenz name=model.user.name
+                 beenz=model.rating.beenz
+                 action="giveBeenz"}}
+  {{/if}}
+</div>

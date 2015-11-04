@@ -1,3 +1,6 @@
 {{#each kitties as |kitty|}}
-  {{beenz-kitty image=kitty.image been=kitty.been size=size}}
+  {{beenz-kitty image=kitty.image
+                been=kitty.been
+                size=size
+                action="giveBeenz"}}
 {{/each}}
