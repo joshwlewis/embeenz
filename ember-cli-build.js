@@ -4,6 +4,9 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    fingerprint: {
+      exclude: [0,1,2,3,4,5].map((i) => { return `kitty-${i}.png`; })
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
