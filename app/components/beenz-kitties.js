@@ -34,8 +34,9 @@ export default Ember.Component.extend({
 
   actions: {
     giveBeenz(been) {
-      console.log('firing level 2');
-      this.sendAction('action', been);
+      if (this.get('isEditable')) {
+        this.sendAction('action', been);
+      }
     }
   }
 });
